@@ -1,5 +1,3 @@
-name: Docker Publish
-
 on:
   push:
     branches:
@@ -8,11 +6,12 @@ on:
 permissions:
   contents: read
   packages: write
-  jobs:
+
+jobs:
   build-and-push:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v4
       - name: Log in to the Container registry
         uses: docker/login-action@v3
         with:
